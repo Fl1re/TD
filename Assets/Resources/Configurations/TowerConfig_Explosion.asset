@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa18a01281d0de429de412b6a6b9a25, type: 3}
+  m_Name: TowerConfig_Explosion
+  m_EditorClassIdentifier: 
+  Type: 2
+  Prefab: {fileID: 1101913491784884832, guid: a3d3ac8c615286445a207a14f2a7f58b, type: 3}
+  ProjectilePrefab: {fileID: 2157548204896545726, guid: cd8f79f0e7afb5c4e96774809ee40ce1,
+    type: 3}
+  Cost: 60
+  BaseLevel:
+    Damage: 20
+    ProjectileSpeed: 60
+    AttackRadius: 50
+    AttackInterval: 6
+    RotationSpeed: 6
+    UpgradeCost: 0
+  UpgradeLevels:
+  - Damage: 40
+    ProjectileSpeed: 60
+    AttackRadius: 50
+    AttackInterval: 5
+    RotationSpeed: 6
+    UpgradeCost: 240
+  - Damage: 60
+    ProjectileSpeed: 60
+    AttackRadius: 50
+    AttackInterval: 4
+    RotationSpeed: 6
+    UpgradeCost: 350

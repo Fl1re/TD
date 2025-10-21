@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b17138d2fae8845ae649164d8b6fb4, type: 3}
+  m_Name: GameInstaller
+  m_EditorClassIdentifier: 
+  waveConfig: {fileID: 11400000, guid: 1d314c52297af1c4e9b1a9676c68860d, type: 2}
+  basicEnemyConfig: {fileID: 11400000, guid: 15f045ff02937f741ae5fcfcf0355021, type: 2}
+  fastEnemyConfig: {fileID: 11400000, guid: 801df245574fd9547929b48fd7e5be28, type: 2}
+  fatEnemyConfig: {fileID: 11400000, guid: 2ca60c4c282bce0418035b9863661d7e, type: 2}
+  basicTowerConfig: {fileID: 11400000, guid: a1860f08f225ba148ae7083ca7c027c2, type: 2}
+  fastTowerConfig: {fileID: 11400000, guid: 4f8db35b61a427d43989c0e651a43143, type: 2}
+  cannonTowerConfig: {fileID: 11400000, guid: cf3e11ee392c1cf4eaed6a4eead701c6, type: 2}

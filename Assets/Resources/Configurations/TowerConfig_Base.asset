@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa18a01281d0de429de412b6a6b9a25, type: 3}
+  m_Name: TowerConfig_Base
+  m_EditorClassIdentifier: 
+  Type: 0
+  Prefab: {fileID: 1140702724054844824, guid: c8e5af2c687156243b573f576fcaa3ea, type: 3}
+  ProjectilePrefab: {fileID: 1405566972933423607, guid: 8bd38d5d74fc2ef43930a064e06419cb,
+    type: 3}
+  Cost: 10
+  BaseLevel:
+    Damage: 15
+    ProjectileSpeed: 50
+    AttackRadius: 50
+    AttackInterval: 2.5
+    RotationSpeed: 6
+    UpgradeCost: 0
+  UpgradeLevels:
+  - Damage: 30
+    ProjectileSpeed: 50
+    AttackRadius: 50
+    AttackInterval: 2.5
+    RotationSpeed: 6
+    UpgradeCost: 75
+  - Damage: 60
+    ProjectileSpeed: 50
+    AttackRadius: 50
+    AttackInterval: 2.5
+    RotationSpeed: 6
+    UpgradeCost: 100
