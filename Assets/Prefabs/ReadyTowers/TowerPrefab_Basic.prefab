@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalRotator: {fileID: 5374451283954204379}
+  rifflesParent: {fileID: 5374451283954204379}
   firePoint: {fileID: 5776929066733511912}
   _config: {fileID: 0}
 --- !u!114 &5049180008138214861
@@ -209,12 +210,12 @@ GameObject:
   - component: {fileID: 7231499294572895025}
   - component: {fileID: 3417120224959099955}
   m_Layer: 0
-  m_Name: Upgrade1
+  m_Name: Upgrade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4222231947530170443
 Transform:
   m_ObjectHideFlags: 0
@@ -312,8 +313,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8777731309143837867}
-  - {fileID: 4222231947530170443}
   - {fileID: 5172937255502073632}
+  - {fileID: 4222231947530170443}
   - {fileID: 5776929066733511912}
   m_Father: {fileID: 8147258977954578209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -379,12 +380,12 @@ GameObject:
   - component: {fileID: 5748844502355990592}
   - component: {fileID: 4006929874980588641}
   m_Layer: 0
-  m_Name: Upgrade2
+  m_Name: Upgrade1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5172937255502073632
 Transform:
   m_ObjectHideFlags: 0

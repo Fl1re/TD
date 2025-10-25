@@ -2,7 +2,7 @@ using System;
 
 public class EconomyManager
 {
-    private int _resources = 100;
+    private int _resources = 1000;
     public event Action<int> OnResourcesChanged;
 
     public int Resources => _resources;

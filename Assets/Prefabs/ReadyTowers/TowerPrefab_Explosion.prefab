@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalRotator: {fileID: 7651187426096125777}
+  rifflesParent: {fileID: 7651187426096125777}
   firePoint: {fileID: 6874317782354613145}
   _config: {fileID: 0}
 --- !u!114 &811517268761366360

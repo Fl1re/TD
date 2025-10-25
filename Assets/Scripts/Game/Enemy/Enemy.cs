@@ -41,6 +41,14 @@ public class Enemy : MonoBehaviour, IEnemy
                     target,
                     _config.Speed * Time.deltaTime
                 );
+                
+                Vector3 direction = (target - transform.position).normalized;
+                if (direction != Vector3.zero)
+                {
+                    Quaternion lookRotation = Quaternion.LookRotation(direction);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * _config.Speed);
+                }
+                
                 await UniTask.Yield(cancellationToken: _cts.Token);
             }
             _currentWaypointIndex++;
@@ -64,7 +72,8 @@ public class Enemy : MonoBehaviour, IEnemy
     private void OnEnemyDeath()
     {
         OnDeath?.Invoke();
-        Destroy(gameObject);
+        _cts?.Cancel();
+        Destroy(gameObject,1f);
     }
 
     private void OnDestroy()

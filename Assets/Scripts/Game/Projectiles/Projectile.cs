@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,12 +12,13 @@ public abstract class Projectile : MonoBehaviour
     private float _speed;
     private bool _isArc;
     private readonly float _arcHeight = 5f;
-    
+
     public virtual void Initialize(IEnemy target, float damage, float speed, bool isArc = false)
     {
         _cts = new CancellationTokenSource();
         _enemy = target;
         _damage = damage;
+        _enemy.OnDeath += DestroyProjectile;
         _speed = speed;
         _isArc = isArc;
         _ = ReachTargetLoop();
@@ -45,8 +47,7 @@ public abstract class Projectile : MonoBehaviour
                     if (t >= 1f)
                     {
                         await ApplyDamage();
-                        _cts.Cancel();
-                        Destroy(gameObject);
+                        DestroyProjectile();
                         break;
                     }
 
@@ -64,20 +65,29 @@ public abstract class Projectile : MonoBehaviour
                     if (Vector3.Distance(transform.position, enemyTransform.position) < 0.1f)
                     {
                         await ApplyDamage();
-                        _cts.Cancel();
-                        Destroy(gameObject);
+                        DestroyProjectile();
                         break;
                     }
                 }
             }
             else
             {
-                _cts.Cancel();
-                Destroy(gameObject);
+                DestroyProjectile();
                 break;
             }
             await UniTask.Yield(cancellationToken: _cts.Token);
         }
+    }
+
+    private void DestroyProjectile()
+    {
+        _cts.Cancel();
+        Destroy(gameObject);
+    }
+    
+    private void OnDestroy()
+    {
+        _enemy.OnDeath -= DestroyProjectile;
     }
     
     protected virtual async UniTask ApplyDamage()

@@ -56,7 +56,20 @@ public class TowerUpgradeUI : MonoBehaviour
 
     private int GetSellCost()
     {
-        return _selectedTower._config.Cost / 2 + GetCost() / 2;
+        int sellCost = _selectedTower._config.Cost / 2;
+        
+        if (_selectedTower.LevelIndex > 0)
+        {
+            for (int i = 0; i < _selectedTower.LevelIndex; i++)
+            {
+                sellCost += _selectedTower._config.UpgradeLevels[i].UpgradeCost / 2;
+            }
+            return sellCost;
+        }
+        else
+        {
+            return sellCost;
+        }
     }
 
     private int GetCost()

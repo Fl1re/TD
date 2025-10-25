@@ -29,7 +29,7 @@ public class MagicProjectile : Projectile
             enemy.TakeDamage(currentDamage);
             currentDamage /= DamageDivider;
 
-            UniTask.WaitForSeconds(1500);
+            await UniTask.WaitForSeconds(0.2f);
         }
 
         await UniTask.CompletedTask;

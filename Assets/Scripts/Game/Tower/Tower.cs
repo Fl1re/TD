@@ -8,6 +8,7 @@ using Zenject;
 public abstract class Tower : MonoBehaviour, ITower, IAttackable
 {
     [SerializeField] private Transform horizontalRotator;
+    [SerializeField] private Transform rifflesParent;
     [SerializeField] public Transform firePoint;
     
     [Inject] private EconomyManager _economyManager;
@@ -32,6 +33,7 @@ public abstract class Tower : MonoBehaviour, ITower, IAttackable
     public float AttackRadius => _attackRadius;
     public float ProjectileSpeed => _projectileSpeed;
     public int CurrentLevel => _currentLevelIndex + 1;
+    public int LevelIndex => _currentLevelIndex;
     public int MaxLevel => _config.UpgradeLevels.Count + 1;
 
     public virtual void Initialize(TowerConfig config)
@@ -52,6 +54,7 @@ public abstract class Tower : MonoBehaviour, ITower, IAttackable
         _attackRadius = level.AttackRadius;
         _attackInterval = level.AttackInterval;
         _rotationSpeed = level.RotationSpeed;
+        ChangeRiffleOnUpgrade(_currentLevelIndex);
     }
 
     private bool CanUpgrade() => _currentLevelIndex < _config.UpgradeLevels.Count;
@@ -68,6 +71,17 @@ public abstract class Tower : MonoBehaviour, ITower, IAttackable
             _currentLevelIndex++;
             ApplyLevel(nextLevel);
         }
+    }
+
+    private void ChangeRiffleOnUpgrade(int level)
+    {
+        if(level >= MaxLevel) return;
+        
+        foreach (Transform riffle in rifflesParent.transform)
+        {
+            riffle.gameObject.SetActive(false);
+        }
+        rifflesParent.GetChild(level).gameObject.SetActive(true);
     }
 
     protected virtual async UniTask TargetSearchLoopAsync()
