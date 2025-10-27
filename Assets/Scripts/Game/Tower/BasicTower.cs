@@ -7,7 +7,6 @@ public class BasicTower : Tower
     private int ProjectileCount => CurrentLevel;
     public override async void Attack(IEnemy target)
     {
-        Debug.Log(ProjectileCount);
         for (int i = 0; i < ProjectileCount; i++)
         {
             var projectileGO = Instantiate(_config.ProjectilePrefab.gameObject, firePoint.position, firePoint.rotation);

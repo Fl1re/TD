@@ -27,9 +27,12 @@ public class Enemy : MonoBehaviour, IEnemy
         _health = _config.Health;
         _currentWaypointIndex = 0;
 
+        gameObject.transform.position = _path[0];
+
         _cts = new CancellationTokenSource();
     }
-    public async UniTask MoveAsync()
+
+    public async UniTask MoveAsync(CancellationToken ct)
     {
         while (_currentWaypointIndex < _path.Length)
         {
@@ -52,6 +55,7 @@ public class Enemy : MonoBehaviour, IEnemy
                 await UniTask.Yield(cancellationToken: _cts.Token);
             }
             _currentWaypointIndex++;
+            await UniTask.WaitForFixedUpdate(cancellationToken: ct);
         }
         _playerBase.TakeDamage(_config.Damage);
         OnEnemyDeath();

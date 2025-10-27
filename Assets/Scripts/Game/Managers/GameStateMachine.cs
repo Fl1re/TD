@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Zenject;
+using UnityEngine.SceneManagement;
 
 
 public enum GameState
@@ -12,7 +11,8 @@ public enum GameState
     Playing,
     WaveInProgress,
     Paused,
-    GameOver
+    GameOver,
+    Victory
 }
 public class GameStateMachine
 {
@@ -25,52 +25,35 @@ public class GameStateMachine
         CurrentState = GameState.Menu;
     }
 
-    public async UniTask EnterStateAsync(GameState newState)
+    public async UniTask EnterStateAsync(GameState state, CancellationToken ct = default)
     {
-        if (CurrentState == newState) return;
+        CurrentState = state;
+        OnStateChanged?.Invoke(state);
 
-        await ExitCurrentStateAsync();
-
-        CurrentState = newState;
-
-        await EnterNewStateAsync();
-
-        OnStateChanged?.Invoke(CurrentState);
-    }
-
-    private async UniTask ExitCurrentStateAsync()
-    {
-        switch (CurrentState)
+        switch (state)
         {
-            case GameState.WaveInProgress:
-                await UniTask.CompletedTask;
-                break;
-        }
-    }
-
-    private async UniTask EnterNewStateAsync()
-    {
-        switch (CurrentState)
-        {
-            case GameState.Menu:
-                // Показать меню UI
-                await UniTask.CompletedTask;
-                break;
             case GameState.Playing:
-                await UniTask.CompletedTask;
-                break;
-            case GameState.WaveInProgress:
-                // Запустить волну
-                await UniTask.CompletedTask;
+                Time.timeScale = 1f;
                 break;
             case GameState.Paused:
-                // Пауза, показать UI улучшений
-                await UniTask.CompletedTask;
-                break;
             case GameState.GameOver:
-                // Показать GameOver экран
-                await UniTask.CompletedTask;
+            case GameState.Victory:
+                Time.timeScale = 0f;
                 break;
         }
+    }
+
+    public void Pause() => EnterStateAsync(GameState.Paused).Forget();
+
+    public void Resume() => EnterStateAsync(GameState.Playing).Forget();
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

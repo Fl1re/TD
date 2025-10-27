@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zenject;
 using System.Collections.Generic;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "GameInstaller", menuName = "Installers/GameInstaller")]
 public class GameInstaller : ScriptableObjectInstaller<GameInstaller>
@@ -44,5 +45,13 @@ public class GameInstaller : ScriptableObjectInstaller<GameInstaller>
             })
             .AsSingle();
         Container.Bind<IFactory<TowerType, Transform, ITower>>().To<TowerFactory>().AsSingle();
+        
+        Container.Bind<ILevelManager>().To<LevelManager>().AsSingle();
+        Container.Bind<List<LevelConfig>>().FromMethod(GetLevelsList).AsSingle();
+    }
+    
+    private List<LevelConfig> GetLevelsList()
+    {
+        return Resources.LoadAll<LevelConfig>("Levels").ToList();
     }
 }
