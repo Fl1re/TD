@@ -35,6 +35,7 @@ public class GameInstaller : ScriptableObjectInstaller<GameInstaller>
         Container.Bind<PathHolder>().FromComponentInHierarchy().AsSingle();
 
         Container.Bind<TowerPlacementSystem>().AsSingle();
+        Container.Bind<TowerPlacementInput>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Dictionary<TowerType, TowerConfig>>()
             .WithId("TowerConfigs")
             .FromInstance(new Dictionary<TowerType, TowerConfig>

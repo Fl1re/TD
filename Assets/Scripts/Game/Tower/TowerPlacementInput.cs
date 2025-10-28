@@ -17,22 +17,6 @@ public class TowerPlacementInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.F))
-        {
-            typeInt = 0;
-            Debug.Log("Set As Basic");
-        }
-        if (Input.GetKey(KeyCode.G))
-        {
-            typeInt = 1;
-            Debug.Log("Set As Fast");
-        }
-        if (Input.GetKey(KeyCode.H))
-        {
-            typeInt = 2;
-            Debug.Log("Set As Cannon");
-        }
-        
         HandleHighlight();
         HandlePlacement(typeInt);
     }
@@ -58,6 +42,22 @@ public class TowerPlacementInput : MonoBehaviour
         {
             _lastHighlightedSpot.Highlight(false, _placementSystem.CanPlaceTower(TowerType.Basic));
             _lastHighlightedSpot = null;
+        }
+    }
+
+    public void SetNewTowerType(int towerType)
+    {
+        switch (towerType)
+        {
+            case 0:
+                typeInt = 0;
+                break;
+            case 1:
+                typeInt = 1;
+                break;
+            case 2:
+                typeInt = 2;
+                break;
         }
     }
 

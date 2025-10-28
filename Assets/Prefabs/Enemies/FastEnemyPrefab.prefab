@@ -115,7 +115,7 @@ Transform:
   m_Children:
   - {fileID: 7711637091090337304}
   m_Father: {fileID: 8413063218671493629}
-  m_LocalEulerAnglesHint: {x: 3.0934289, y: -0.16220213, z: -1.6511874}
+  m_LocalEulerAnglesHint: {x: 3.2124715, y: -0.16610354, z: -1.6903043}
 --- !u!1 &1397665833627549999
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7019274862613786935
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -500, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8843640106795058007}
@@ -329,7 +329,7 @@ Animator:
   m_GameObject: {fileID: 2878001368126907301}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4d4891fce9b81c4bb8af45b1f172e2d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 77681dfa325f56b4091372fc22ec3a6e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6520987179538998707
 Transform:
   m_ObjectHideFlags: 0
@@ -624,7 +624,7 @@ Transform:
   m_Children:
   - {fileID: 4457773655577047434}
   m_Father: {fileID: 2186107961846033083}
-  m_LocalEulerAnglesHint: {x: 3.5664866, y: -0.038254738, z: 1.7653329}
+  m_LocalEulerAnglesHint: {x: 3.532067, y: -0.03639689, z: 1.6701325}
 --- !u!1 &6327562499908213596
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ Transform:
   m_Children:
   - {fileID: 2186107961846033083}
   m_Father: {fileID: 8843640106795058007}
-  m_LocalEulerAnglesHint: {x: -3.5965222e-15, y: -8.478088e-32, z: 2.701264e-15}
+  m_LocalEulerAnglesHint: {x: -3.596527e-15, y: -8.478097e-32, z: 2.7012681e-15}
 --- !u!1 &6845301586756992116
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a9074b0edf06ed245af0433d4e01cb4d, type: 2}
+  - {fileID: 2100000, guid: 6df0f33398298c543a6d7293738e8818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -845,7 +845,7 @@ Transform:
   - {fileID: 6520987179538998707}
   - {fileID: 4242104205932954360}
   m_Father: {fileID: 4457773655577047434}
-  m_LocalEulerAnglesHint: {x: -4.6913124e-13, y: 1.3517353e-14, z: 7.156254e-15}
+  m_LocalEulerAnglesHint: {x: -4.611804e-13, y: -6.361109e-15, z: -1.2722218e-14}
 --- !u!1 &9196042002559485358
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,4 +877,4 @@ Transform:
   m_Children:
   - {fileID: 8413063218671493629}
   m_Father: {fileID: 3518744344817142368}
-  m_LocalEulerAnglesHint: {x: 1.9883859, y: -0.044319905, z: -0.4822408}
+  m_LocalEulerAnglesHint: {x: 2.0797508, y: -0.04656184, z: -0.515243}

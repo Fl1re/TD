@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: FastEnemyConfig
   m_EditorClassIdentifier: 
   Type: 1
-  Health: 100
-  Speed: 100
+  Health: 120
+  Speed: 50
   Reward: 20
+  Damage: 5
   Prefab: {fileID: 2878001368126907301, guid: 44ab5482515a6794c9d2505b1477062c, type: 3}

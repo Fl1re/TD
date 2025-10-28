@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +23,6 @@ public class MainMenuUI : MonoBehaviour
         {
             Toggle toggle = Instantiate(levelButtonPrefab, levelsContainer);
             toggle.GetComponentInChildren<TextMeshProUGUI>().text = level.LevelName;
-            toggle.interactable = _levelManager.IsLevelUnlocked(level);
             toggle.group = toggleGroup;
             toggle.onValueChanged.AddListener((selected =>
             {
